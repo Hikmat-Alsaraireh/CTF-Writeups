@@ -1,0 +1,13 @@
+Author: Darkraicg492
+
+#### Description
+
+Can you find the flag in this disk image? The right one is Linux! One wrong step and its all gone!Download the disk image [here](https://artifacts.picoctf.net/c/539/disko-2.dd.gz).
+
+
+solution:
+Steps and Commands to Solve: 
+1. wget [download link]
+2. gunzip disko-2.dd 
+3. dd if=disko-2.dd of=LinuxPartition.img bs=512 skip=2048 count=51200 
+4. strings linuxPartition.dd | grep picoCTF
