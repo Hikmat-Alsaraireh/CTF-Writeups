@@ -1,0 +1,25 @@
+Author: syreal
+
+#### Description
+
+Lyrics jump from verses to the refrain kind of like a subroutine call. There's a hidden refrain this program doesn't print by default. Can you get it to print it? There might be something in it for you.The program's source code can be downloaded [here](https://challenge-files.picoctf.net/c_verbal_sleep/ababdc2ebe3635578b92685dfa86f09962d7d64ff3b0fda327e8bbe93fc08764/lyric-reader.py).
+
+Additional details will be available after launching your challenge instance.
+
+
+
+solution:
+We know that the script takes user input, and this input isn’t sanitized:
+
+elif re.match(r"CROWD.*", line):  
+        crowd = input('Crowd: ')  
+        song_lines[lip] = 'Crowd: ' + crowd  
+        lip += 1
+
+We also know that we can use the `RETURN` command to force the reader to read any specific line:
+
+elif re.match(r"RETURN [0-9]+", line):  
+        lip = int(line.split()[1])
+
+Since we know that the verse containing our flag starts at the very beginning, we need to pass `RETURN 0` to the script. However, if we do this, the script will simply echo `RETURN 0` back to us, treating it as a string. To make sure the script interprets `RETURN 0` as a command rather than a string, we need to adjust our input slightly.
+Instead of just using `RETURN 0`, we will use `some_string;RETURN 0`.
