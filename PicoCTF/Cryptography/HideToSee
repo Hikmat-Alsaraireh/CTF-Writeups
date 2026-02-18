@@ -1,0 +1,25 @@
+Author: Sunday Jacob Nwanyim
+
+#### Description
+
+How about some hide and seek heh?Look at this image [here](https://artifacts.picoctf.net/c/235/atbash.jpg).
+
+
+solution:
+Not the most enjoyable challenge. Gives us an image called `atbash.jpg`, but no ciphertext yet. We actually have to use steganography techniques to extract the ciphertext from being embedded in the image, using `steghide`:
+
+Copy
+
+```
+$ steghide extract -sf atbash.jpg
+```
+
+The passphrase is empty. The `encrypted.txt` file that is created has the following:
+
+Copy
+
+```
+krxlXGU{zgyzhs_xizxp_8z0uvwwx}
+```
+
+Based off the filename, we can assume it's an **atbash cipher**, which is essentially a transposition cipher where alphabet is flipped (so `A` goes to `Z`, `B` goes to `Y`, etc).
