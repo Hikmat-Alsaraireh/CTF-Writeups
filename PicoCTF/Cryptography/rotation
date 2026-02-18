@@ -1,0 +1,11 @@
+Author: Loic Shema
+
+#### Description
+
+You will find the flag after decrypting this fileDownload the encrypted flag [here](https://artifacts.picoctf.net/c/390/encrypted.txt).
+
+
+solution:
+you can solve this lab easily by first reading the file you will find this encrypted text:
+xqkwKBN{z0bib1wv_l3kzgxb3l_429in00n}
+now go to rot13 brute force to find the original text.
