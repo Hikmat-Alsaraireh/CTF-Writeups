@@ -1,0 +1,13 @@
+Author: Sunday Jacob Nwanyim
+
+#### Description
+
+How about we take you on an adventure on exploring certificate signing requestsTake a look at this CSR file [here](https://artifacts.picoctf.net/c/421/readmycert.csr).
+
+
+solution:
+first read the csr file using cat command 
+then u will find inside the file somthing like this
+![[Pasted image 20251229173050.png]]
+this is a csr encoded message go to this website https://www.sslshopper.com/csr-decoder.html
+to find the common name from it which is the flag .
