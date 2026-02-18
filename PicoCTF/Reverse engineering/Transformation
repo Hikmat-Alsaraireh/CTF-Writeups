@@ -1,0 +1,9 @@
+Author: madStacks
+
+#### Description
+
+I wonder what this really is...[enc](https://challenge-files.picoctf.net/c_wily_courier/acd4ffc228784496e0a2c6445bba7646a457dcf13d9faca2f390c0d6259c25cb/enc) ''.join([chr((ord(flag[i]) << 8) + ord(flag[i + 1])) for i in range(0, len(flag), 2)])
+
+
+solution:
+use cyber chef magic function to solve this lab.
