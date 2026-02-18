@@ -1,0 +1,32 @@
+Author: LT 'syreal' Jones / Mubarak Mikail
+
+#### Description
+
+Attackers have hidden information in a very large mass of data in the past, maybe they are still doing it.Download the data [here](https://artifacts.picoctf.net/c/125/anthem.flag.txt).
+
+solution:
+We are also given the file [anthem.flag.txt](https://ctftime.org/writeup/files/anthem.flag.txt).
+
+I viewed the contents of the file, which contained a very long text.
+
+![Figure 1](https://ctftime.org/writeup/img/text.png)
+
+I counted the words using,
+
+`$ wc -w anthem.flag.txt`
+
+Which showed that there was 19139 words.
+
+![Figure 1](https://ctftime.org/writeup/img/word.png)
+
+I know the flag format is `picoCTF{xxx}`, so I decided to grep it using,
+
+`$ cat anthem.flag.txt | grep "picoCTF"`
+
+Which revealed the flag.
+
+![Figure 1](https://ctftime.org/writeup/img/flag.png)
+
+Therefore, the flag is,
+
+`picoCTF{gr3p_15_@w3s0m3_4554f5f5}`
