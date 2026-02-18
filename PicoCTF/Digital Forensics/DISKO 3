@@ -1,0 +1,40 @@
+Author: Darkraicg492
+
+#### Description
+
+Can you find the flag in this disk image? This time, its not as plain as you think it is!Download the disk image [here](https://artifacts.picoctf.net/c/543/disko-3.dd.gz).
+
+
+
+solution:
+Here the other alternatives would be using scp to securely copy the file from you local host machine to the virtual machine but wget is much quicker.
+
+Press enter or click to view image in full size
+
+![](https://miro.medium.com/v2/resize:fit:1050/1*4s5SPa7a5aNDQONYnVIzKg.png)
+
+Since we can see the the file is a gzip file, used gunzip to decompress the given gzip file.
+
+Press enter or click to view image in full size
+
+![](https://miro.medium.com/v2/resize:fit:1050/1*RQo9bDDuYYYWLyFrObyckQ.png)
+
+After that used fls to check for files inside the disk image. -r for recursive check and -p options for the full display of the directories.
+
+Press enter or click to view image in full size
+
+![](https://miro.medium.com/v2/resize:fit:1050/1*qn7f0F-QQYPQCx04sCJIbQ.png)
+
+We can see that there is a flag.gz file with the inode number 522628.
+
+Press enter or click to view image in full size
+
+![](https://miro.medium.com/v2/resize:fit:1050/1*HqKwwSbdyUt9exBg1obqyQ.png)
+
+Used icat on the file with the desired inode number and redirected it to a file.
+
+After that gunzip the file and then cat the file to obtain the flag.
+
+![](https://miro.medium.com/v2/resize:fit:974/1*ljDoCyc-PtcLHKdtzwmonA.png)
+
+And then there it is the flag in plain sight.
